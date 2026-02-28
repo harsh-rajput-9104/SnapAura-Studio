@@ -205,7 +205,7 @@ export default function ContactForm() {
                                     fontWeight: 300,
                                 }}
                             >
-                                We'll be in touch within 24 hours.
+                                We&apos;ll be in touch within 24 hours.
                             </p>
                         </div>
                     </div>
