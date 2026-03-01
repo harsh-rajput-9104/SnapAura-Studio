@@ -3,6 +3,12 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
+export const viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+};
+
 export const metadata = {
     metadataBase: new URL('https://snapaura.studio'),
     title: {

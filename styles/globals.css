@@ -985,3 +985,100 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+
+/* =========================
+   HERO HEADING — RESPONSIVE FONT
+========================= */
+/* Desktop baseline — matches original inline clamp */
+.hero-heading {
+  font-size: clamp(3.2rem, 7vw, 6.5rem);
+  line-height: 1.0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Tablet — start reducing as vw shrinks */
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: clamp(2.6rem, 7vw, 3.4rem);
+    line-height: 1.05;
+  }
+}
+
+/* Small mobile — prevent 3.2rem minimum from locking too large */
+@media (max-width: 480px) {
+  .hero-heading {
+    font-size: clamp(2.2rem, 7.5vw, 2.8rem);
+    line-height: 1.1;
+  }
+}
+
+/* Narrow / high font-scale — hardened minimum */
+@media (max-width: 380px) {
+  .hero-heading {
+    font-size: clamp(1.9rem, 8vw, 2.4rem);
+    line-height: 1.15;
+  }
+}
+
+/* =========================
+   HERO CONTENT PADDING — RESPONSIVE
+========================= */
+/* Desktop baseline — matches original inline 7rem */
+.hero-content-pad {
+  padding-bottom: 7rem;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .hero-content-pad {
+    padding-bottom: 5rem;
+  }
+}
+
+/* Small mobile — reduce to give content more vertical room */
+@media (max-width: 480px) {
+  .hero-content-pad {
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* Narrow / high font-scale — minimum safe bottom spacing */
+@media (max-width: 380px) {
+  .hero-content-pad {
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* =========================
+   HERO SECTION — MIN HEIGHT HARDENING
+========================= */
+/* Ensure enough vertical room for content + navbar clearance at 380px */
+@media (max-width: 380px) {
+  .hero-section {
+    min-height: 580px;
+  }
+}
+
+/* =========================
+   DEFENSIVE 380px BREAKPOINT
+   Catches all edge cases: narrow viewport + system font scaling
+========================= */
+@media (max-width: 380px) {
+  /* Tighten hero tagline paragraph spacing */
+  .hero-content-pad .section-label {
+    margin-bottom: 1rem;
+  }
+
+  /* Ensure inner content text never overflows container */
+  .hero-content-pad > div {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  /* Reduce CTA button spacing on very small screens */
+  .hero-content-pad .btn-primary,
+  .hero-content-pad .btn-ghost {
+    padding: 0.65rem 1.2rem;
+  }
+}

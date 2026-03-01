@@ -11,6 +11,7 @@ export default function Hero() {
 
     return (
         <section
+            className="hero-section"
             style={{
                 position: 'relative',
                 height: '100svh',
@@ -88,11 +89,10 @@ export default function Hero() {
 
             {/* Content */}
             <div
-                className="section-container"
+                className="section-container hero-content-pad"
                 style={{
                     position: 'relative',
                     zIndex: 2,
-                    paddingBottom: '7rem',
                     width: '100%',
                 }}
             >
@@ -107,16 +107,16 @@ export default function Hero() {
 
                     {/* Main heading */}
                     <h1
-                        className="anim-fade-up delay-1"
+                        className="anim-fade-up delay-1 hero-heading"
                         style={{
                             fontFamily: 'var(--font-heading)',
-                            fontSize: 'clamp(3.2rem, 7vw, 6.5rem)',
                             fontWeight: 400,
                             lineHeight: 1.0,
                             letterSpacing: '0.01em',
                             color: 'var(--text-primary)',
                             marginBottom: '1.5rem',
                             opacity: 0,
+                            overflowWrap: 'break-word',
                         }}
                     >
                         Capturing{' '}
