@@ -14,10 +14,6 @@ export default function Hero() {
             className="hero-section"
             style={{
                 position: 'relative',
-                height: '100svh',
-                minHeight: '600px',
-                display: 'flex',
-                alignItems: 'flex-end',
                 overflow: 'hidden',
                 background: 'var(--bg-primary)',
             }}

@@ -26,6 +26,9 @@
 
   --ease-cinematic: cubic-bezier(0.25, 0.1, 0.25, 1);
   --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Navbar height contract — used by hero and any section needing navbar clearance */
+  --navbar-height: 80px;
 }
 
 /* ─────────────────────────────────────────
@@ -1051,12 +1054,27 @@ body {
 }
 
 /* =========================
-   HERO SECTION — MIN HEIGHT HARDENING
+   HERO SECTION — LAYOUT & HEIGHT SAFETY
 ========================= */
+.hero-section {
+  display: flex;
+  align-items: flex-end; /* Matches original behavior but isolated in CSS */
+  height: 100svh;
+  min-height: calc(var(--navbar-height) + 520px);
+  padding-top: var(--navbar-height); /* Critical: Offset the fixed navbar */
+}
+
 /* Ensure enough vertical room for content + navbar clearance at 380px */
 @media (max-width: 380px) {
   .hero-section {
     min-height: 580px;
+  }
+}
+
+/* Hardening for short-viewport laptops (e.g. 1366x768) */
+@media (max-height: 800px) and (min-width: 769px) {
+  .hero-content-pad {
+    padding-bottom: 4rem; /* Tighten bottom to prevent pushing up into navbar */
   }
 }
 
